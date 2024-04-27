@@ -15,9 +15,10 @@ const page = () => {
     setDesc("")
   }
 
-  const deleteHandler = (I) => {
+  const deleteHandler = (i) => {
     let copytask = [...mainTask]
-    copytask.splice
+    copytask.splice(i,1)
+    setMainTask(copytask)
   }
 
 
@@ -35,7 +36,7 @@ const page = () => {
           {t.desc}
         </h6>
       </div>
-      <button onClick={deleteHandler(i)} className='bg-red-400 text-white px-4 py-3 text-2 font-bold rounded'>Delete</button>
+      <button onClick={()=> {deleteHandler(i)}} className='bg-red-400 text-white px-4 py-3 text-2 font-bold rounded'>Delete</button>
      </li>
     )
   })
